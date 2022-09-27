@@ -2,7 +2,7 @@
 import dayjs from 'dayjs';
 
 const weekLink: { class: string; href: string; date: string; count: number; }[] = [];
-const jsonFilePath = 'public/data/update_counts.json'
+const jsonFilePath = '/data/update_counts.json'
 const updateCounts: { date: string, count: number }[] = await fetch(jsonFilePath).then(r => r.json())
 
 updateCounts.forEach(uc => {
