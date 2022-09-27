@@ -10,17 +10,15 @@ const props = defineProps({
 
 const date = toRef(props, "targetDate")
 let tdate = ref("")
-let books = ref<{colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn:string}[]>([])
+let books = ref<{ colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn: string }[]>([])
 
 watch(date, async () => {
   const d = props.targetDate ? dayjs(props.targetDate, 'YYYYMMDD') : dayjs()
   tdate.value = d.format('YYYY/MM/DD')
   const jsonFilePath = `/data/${d.format('YYYY-MM-DD')}.json`
 
-  if (typeof props.targetDate == 'string') {
-    const updatedBooks: {colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn:string}[] = await fetch(jsonFilePath).then(r => r.json())
-    books.value.splice(0, books.value.length, ...updatedBooks)
-  }
+  const updatedBooks: { colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn: string }[] = await fetch(jsonFilePath).then(r => r.json())
+  books.value.splice(0, books.value.length, ...updatedBooks)
 }, { immediate: true })
 </script>
 
@@ -38,11 +36,12 @@ watch(date, async () => {
       </tr>
     </thead>
     <tbody v-for="book in books">
-      <Book :colid=book.colid :group=book.group :title=book.title :author=book.author :publisher=book.publisher :published=book.published
-        :isbn=book.isbn></Book>
+      <Book :colid=book.colid :group=book.group :title=book.title :author=book.author :publisher=book.publisher
+        :published=book.published :isbn=book.isbn></Book>
     </tbody>
   </table>
 </template>
 
 <style scoped>
+
 </style>
