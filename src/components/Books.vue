@@ -15,7 +15,7 @@ let books = ref<{colid: string, group: string, title: string, author: string, pu
 watch(date, async () => {
   const d = props.targetDate ? dayjs(props.targetDate, 'YYYYMMDD') : dayjs()
   tdate.value = d.format('YYYY/MM/DD')
-  const jsonFilePath = `public/data/${d.format('YYYY-MM-DD')}.json`
+  const jsonFilePath = `/data/${d.format('YYYY-MM-DD')}.json`
 
   if (typeof props.targetDate == 'string') {
     const updatedBooks: {colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn:string}[] = await fetch(jsonFilePath).then(r => r.json())
