@@ -17,6 +17,9 @@ watch(date, async () => {
   tdate.value = d.format('YYYY/MM/DD')
   const jsonFilePath = `/data/${d.format('YYYY-MM-DD')}.json`
 
+  const zeroBook: { colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn: string }[] = []
+  books.value.splice(0, books.value.length, ...zeroBook)
+  // TODO: ローディング中のアニメーションを入れたい
   const updatedBooks: { colid: string, group: string, title: string, author: string, publisher: string, published: string, isbn: string }[] = await fetch(jsonFilePath).then(r => r.json())
   books.value.splice(0, books.value.length, ...updatedBooks)
 }, { immediate: true })
