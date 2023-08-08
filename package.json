@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue/language-core": "^1.8.8",
+    "@vue/typescript": "^1.8.8",
     "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "vue": "^3.2.37",
