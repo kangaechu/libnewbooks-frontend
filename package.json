@@ -11,7 +11,7 @@
   "dependencies": {
     "@vue/language-core": "^1.8.8",
     "@vue/typescript": "^1.8.8",
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "dayjs": "^1.11.5",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5"
