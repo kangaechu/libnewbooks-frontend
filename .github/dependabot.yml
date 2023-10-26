@@ -6,9 +6,10 @@ updates:
     schedule:
       interval: "weekly"
     groups:
-      update-types:
-        - minor
-        - patch
+      minor-patch-dependencies:
+        update-types:
+          - minor
+          - patch
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
@@ -16,6 +17,7 @@ updates:
     schedule:
       interval: "weekly"
     groups:
-      update-types:
-        - minor
-        - patch
+      minor-patch-dependencies:
+        update-types:
+          - minor
+          - patch
