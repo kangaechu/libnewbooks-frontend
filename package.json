@@ -9,10 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vue/language-core": "^2.0.29",
+    "@vue/language-core": "^2.1.4",
     "@vue/typescript": "^1.8.20",
-    "axios": "^1.7.4",
-    "dayjs": "^1.11.12",
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3"
   },
@@ -20,6 +20,6 @@
     "@vitejs/plugin-vue": "^3.0.3",
     "typescript": "^5.5.4",
     "vite": "^3.2.10",
-    "vue-tsc": "^2.0.29"
+    "vue-tsc": "^2.1.4"
   }
 }
